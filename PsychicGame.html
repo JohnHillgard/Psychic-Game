@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Psychic Game</title>
+</head>
+<body>
+	<h1>The Psychic Game</h1>
+
+	<p>Guess what letter I'm thinking of</p>
+
+	<div>
+
+	Wins: <span id="win"></span><br>
+
+	Losses: <span id="losses"></span><br>
+
+	Guesses left: <span id="guessesLeft"></span><br>
+
+	Guesses made: <span id="userGuess"></span><br>
+	
+	</div>
+
+<script type="text/javascript">
+
+// Start game with wins amount of 0
+var wins = 0;
+
+// Start game with losses amount of 0
+var losses = 0;
+
+// Variable to hold the number of guesses made starting at 9
+var guessesLeft = 9;
+
+
+// Var to hold the options the computer can choose
+var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z"];
+
+
+// Randomly chooses a choice from the options array. This is the Computer's guess.
+var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+console.log(computerGuess)
+
+
+// This function is run whenever the user presses a key.
+document.onkeyup = function(event) {
+
+  // Determines which key was pressed.
+  var userGuess = event.key;
+
+  
+
+      // This logic determines the outcome of the game (win/loss/tie), and increments the appropriate number
+      if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c")(userGuess === "d") || (userGuess === "e") || (userGuess === "f")(userGuess === "g") || (userGuess === "h") || (userGuess === "i")(userGuess === "j") || (userGuess === "k") || (userGuess === "l")(userGuess === "m") || (userGuess === "n") || (userGuess === "o")(userGuess === "p") || (userGuess === "q") || (userGuess === "r")(userGuess === "s") || (userGuess === "t") || (userGuess === "u")(userGuess === "v") || (userGuess === "w") || (userGuess === "x")(userGuess === "y") || (userGuess === "z")) {
+        if (userGuess === computerGuess) {
+          wins++;
+        } else if {
+          guessesLeft--;
+        }
+
+        var html =
+        "<p>Wins: " + wins + "</p>" +
+        "<p>Losses: " + losses + "</p>" +
+        "<p>Guesses left: " + guessesLeft + "</p>" +
+        "<p>Guesses made: " + userGuess + "</p>";
+
+
+        document.querySelector("#game").innerHTML = html;
+        document.querySelector("#wins").innerHTML = wins;
+        document.querySelector("#losses").innerHTML = losses;
+        document.querySelector("#guessesLeft").innerHTML = guessesLeft;
+        document.querySelector("#userGuess").innerHTML = userGuess;
+
+
+}
+}
+</script>
+
+</body>
+
+</html>
